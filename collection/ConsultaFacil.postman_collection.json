@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "e58b05d5-1b43-4b8e-bcee-307e97aca2d5",
+		"name": "ConsultaFacil",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20952383"
+	},
+	"item": [
+		{
+			"name": "Paciente",
+			"item": [
+				{
+					"name": "criar paciente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Bruna Casagrande\",\r\n  \"cpf\": \"12345678901\",\r\n  \"cartaoSus\": \"123456789012345\",\r\n  \"telefone\": \"+5511999999999\",\r\n  \"email\": \"bruna@example.com\",\r\n  \"senha\": \"Senha@123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/pacientes",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/pacientes/12345678901",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pacientes",
+								"12345678901"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Bruna Atualizada\",\r\n  \"telefone\": \"+5511999999999\",\r\n  \"email\": \"nova.bruna@example.com\",\r\n  \"senha\": \"NovaSenha@2024\",\r\n  \"cartaoSus\": \"123456789012345\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/pacientes/12345678901",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pacientes",
+								"12345678901"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/pacientes/12345678901",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pacientes",
+								"12345678901"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consulta",
+			"item": [
+				{
+					"name": "criar consulta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dataConsulta\": \"2025-07-01\",\r\n  \"horaConsulta\": \"14:30\",\r\n  \"ubs\": {\r\n    \"id\": 7\r\n  },\r\n  \"paciente\": {\r\n    \"id\": 2\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/consultas",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busca consulta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/consultas/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualiza consulta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dataConsulta\": \"2025-07-03\",\r\n  \"horaConsulta\": \"15:30\",\r\n  \"ubs\": {\r\n    \"id\": 7\r\n  },\r\n  \"paciente\": {\r\n    \"id\": 2\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/consultas/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleta consulta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/lareserva/reservation/2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"lareserva",
+								"reservation",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UBS",
+			"item": [
+				{
+					"name": "Create UBS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"UBS Exemplo\",\r\n  \"cnpj\": \"12345678901234\",\r\n  \"endereco\": \"Rua das Flores, 123\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"telefone\": \"+5511988887777\",\r\n  \"email\": \"ubs@example.com\",\r\n  \"senha\": \"Senha123@\",\r\n  \"horariosFuncionamento\": [\r\n    {\r\n      \"diaSemana\": \"SEGUNDA\",\r\n      \"horarioAbertura\": \"08:00\",\r\n      \"horarioFechamento\": \"18:00\"\r\n    }\r\n  ]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{baseURL}}/ubs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ubs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get UBS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/ubs/12345678901234",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ubs",
+								"12345678901234"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update UBS",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": \"Rua das Castanhas, 123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ubs/12345678901234",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ubs",
+								"12345678901234"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Restaurant",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/ubs/12345678901234",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ubs",
+								"12345678901234"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "atualiza horario de funconamento",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"id\": 2,\r\n    \"diaSemana\": \"SEGUNDA\",\r\n    \"horarioAbertura\": \"08:30\",\r\n    \"horarioFechamento\": \"17:30\"\r\n  },\r\n  {\r\n    \"diaSemana\": \"SEXTA\",\r\n    \"horarioAbertura\": \"09:00\",\r\n    \"horarioFechamento\": \"18:00\"\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/horarios-funcionamento/7",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"horarios-funcionamento",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}
